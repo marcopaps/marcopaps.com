@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import type { IHobby } from "../../@types/generated/contentful";
-import ContentfulApi from "../../contentfulApi";
+import type { IHobby } from "@/types/generated/contentful";
+import ContentfulApi from "@/contentfulApi";
 
 const ContentfulClient = ContentfulApi.getClient();
 
