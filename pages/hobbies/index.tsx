@@ -1,6 +1,10 @@
+import NextLink from "next/link";
+import ContentfulApi from "@/contentfulApi";
+import Thumbnail from "@/components/Thumbnail";
+import { ContentTypes } from "@/types/contentTypesEnum";
+
 import type { NextPage } from "next";
 import type { IHobby } from "@/types/generated/contentful";
-import ContentfulApi from "@/contentfulApi";
 
 const ContentfulClient = ContentfulApi.getClient();
 
@@ -10,7 +14,7 @@ type PropsType = {
 
 export async function getStaticProps() {
   const entries = await ContentfulClient.getEntries({
-    content_type: "hobby",
+    content_type: ContentTypes.HOBBY,
   });
 
   return {
@@ -24,7 +28,15 @@ const Home: NextPage<PropsType> = ({ hobbies }) => {
     <>
       <h1>Hobbies page</h1>
       {hobbies?.map((hobby) => (
-        <p key={hobby.sys.id}>{hobby.fields.title}</p>
+        <NextLink
+          href={`/hobbies/${hobby.fields.slug}` || "/"}
+          key={hobby.sys.id}
+        >
+          <a>
+            {hobby.fields.title}
+            <Thumbnail image={hobby.fields.thumbnailDesktop} />
+          </a>
+        </NextLink>
       ))}
     </>
   );
