@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import type { IHobby } from "../@types/generated/contentful";
-import ContentfulApi from "../contentfulApi";
+import type { IHobby } from "../../@types/generated/contentful";
+import ContentfulApi from "../../contentfulApi";
 
 const ContentfulClient = ContentfulApi.getClient();
 
@@ -20,7 +20,14 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage<PropsType> = ({ hobbies }) => {
-  return <h1>{"Home page"}</h1>;
+  return (
+    <>
+      <h1>Hobbies page</h1>
+      {hobbies?.map((hobby) => (
+        <p key={hobby.sys.id}>{hobby.fields.title}</p>
+      ))}
+    </>
+  );
 };
 
 export default Home;
