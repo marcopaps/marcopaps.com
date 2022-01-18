@@ -1,6 +1,5 @@
-import NextLink from "next/link";
 import ContentfulApi from "@/contentfulApi";
-import Thumbnail from "@/components/Thumbnail";
+import Card from "@/components/Card";
 import { ContentTypes } from "@/types/contentTypesEnum";
 
 import type { NextPage } from "next";
@@ -25,20 +24,20 @@ export async function getStaticProps() {
 
 const Home: NextPage<PropsType> = ({ hobbies }) => {
   return (
-    <>
-      <h1>Hobbies page</h1>
-      {hobbies?.map((hobby) => (
-        <NextLink
-          href={`/hobbies/${hobby.fields.slug}` || "/"}
-          key={hobby.sys.id}
-        >
-          <a>
-            {hobby.fields.title}
-            <Thumbnail image={hobby.fields.thumbnailDesktop} />
-          </a>
-        </NextLink>
-      ))}
-    </>
+    <div>
+      <h1 className="text-3xl font-bold text-center m-12">Hobbies page</h1>
+      <div className="m-12">
+        {hobbies?.map((hobby) => (
+          <Card
+            title={hobby.fields.title}
+            description={hobby.fields.description}
+            to={`/hobbies/${hobby.fields.slug}`}
+            image={hobby.fields.thumbnailDesktop}
+            key={hobby.sys.id}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
