@@ -46,7 +46,7 @@ export default function Thubmnail(props: PropsType) {
   const renderImage = useCallback(() => {
     if (props.image) {
       const imageUrl = props.image?.fields.file.url || "/vercel.svg";
-      return <img className="round d-t-lg" src={`https:${imageUrl}`} alt="" />;
+      return <img className="rounded-t-lg " src={`https:${imageUrl}`} alt="" />;
     }
   }, [props.image]);
 

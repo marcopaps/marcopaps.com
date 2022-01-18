@@ -28,13 +28,14 @@ const Home: NextPage<PropsType> = ({ hobbies }) => {
       <h1 className="text-3xl font-bold text-center m-12">Hobbies page</h1>
       <div className="m-12">
         {hobbies?.map((hobby) => (
-          <Card
-            title={hobby.fields.title}
-            description={hobby.fields.description}
-            to={`/hobbies/${hobby.fields.slug}`}
-            image={hobby.fields.thumbnailDesktop}
-            key={hobby.sys.id}
-          />
+          <div className="my-16" key={hobby.sys.id}>
+            <Card
+              title={hobby.fields.title}
+              description={hobby.fields.description}
+              to={`/hobbies/${hobby.fields.slug}`}
+              image={hobby.fields.thumbnailDesktop}
+            />
+          </div>
         ))}
       </div>
     </div>
