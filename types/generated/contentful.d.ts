@@ -39,6 +39,48 @@ export interface IHobby extends Entry<IHobbyFields> {
   };
 }
 
+export interface IJobExperienceFields {
+  /** Company */
+  company: string;
+
+  /** Address */
+  address: string;
+
+  /** Role */
+  role: string;
+
+  /** Start Date */
+  startDate: string;
+
+  /** End Date */
+  endDate: string;
+
+  /** Description */
+  description: Document;
+
+  /** Photos */
+  photos?: Asset[] | undefined;
+}
+
+/** Job Experience */
+
+export interface IJobExperience extends Entry<IJobExperienceFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "jobExperience";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IPhotoFields {
   /** Media */
   media?: Asset | undefined;
@@ -66,7 +108,7 @@ export interface IPhoto extends Entry<IPhotoFields> {
   };
 }
 
-export type CONTENT_TYPE = "hobby" | "photo";
+export type CONTENT_TYPE = "hobby" | "jobExperience" | "photo";
 
 export type LOCALE_CODE = "en-US";
 
