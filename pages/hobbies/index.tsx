@@ -1,18 +1,16 @@
-import ContentfulApi from "@/contentfulApi";
 import Card from "@/components/Card";
+import { Client } from "@/contentfulApi";
 import { ContentTypes } from "@/types/contentTypesEnum";
 
 import type { NextPage } from "next";
 import type { IHobby } from "@/types/generated/contentful";
-
-const ContentfulClient = ContentfulApi.getClient();
 
 type PropsType = {
   hobbies: IHobby[];
 };
 
 export async function getStaticProps() {
-  const entries = await ContentfulClient.getEntries({
+  const entries = await Client.getEntries({
     content_type: ContentTypes.HOBBY,
   });
 

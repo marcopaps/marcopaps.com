@@ -4,7 +4,7 @@ import type { ContentfulClientApi } from "contentful";
 
 dotenv.config();
 
-export default (function () {
+const Contentful = (() => {
   let client: ContentfulClientApi;
 
   return {
@@ -15,7 +15,10 @@ export default (function () {
           accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
         });
       }
+
       return client;
     },
   };
 })();
+
+export const Client = Contentful.getClient();
