@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { Client } from "@/contentfulApi";
 import { ContentTypes } from "@/types/contentTypesEnum";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import type { NextPage } from "next";
 import type { IJobExperience } from "@/types/generated/contentful";
@@ -23,7 +24,12 @@ export async function getStaticProps() {
 const Resume: NextPage<PropsType> = ({ jobExperiences }) => {
   const renderJobExperiences = useCallback(() => {
     return jobExperiences.map((item) => {
-      return <p key={item.sys.id}>{item.fields.company}</p>;
+      return (
+        <div className="my-12" key={item.sys.id}>
+          <div className="font-bold">{item.fields.company}</div>
+          <div>{documentToReactComponents(item.fields.description)}</div>
+        </div>
+      );
     });
   }, [jobExperiences]);
 

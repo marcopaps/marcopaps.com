@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.11.1",
     "contentful": "^9.1.5",
     "dotenv": "^11.0.0",
     "next": "12.0.8",
