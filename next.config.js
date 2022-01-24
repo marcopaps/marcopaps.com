@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     domains: ["images.ctfassets.net"],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
