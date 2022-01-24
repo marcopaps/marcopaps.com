@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { Client } from "@/contentfulApi";
+import { Client } from "@/utils/contentfulApi";
 import { ContentTypes } from "@/types/contentTypesEnum";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 

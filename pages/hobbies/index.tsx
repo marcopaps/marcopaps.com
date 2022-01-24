@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import { Client } from "@/contentfulApi";
+import { Client } from "@/utils/contentfulApi";
 import { ContentTypes } from "@/types/contentTypesEnum";
 
 import type { NextPage } from "next";

@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from "querystring";
-import { Client } from "@/contentfulApi";
+import { Client } from "@/utils/contentfulApi";
 import { ContentTypes } from "@/types/contentTypesEnum";
 
 import type { NextPage, GetStaticPropsContext } from "next";
