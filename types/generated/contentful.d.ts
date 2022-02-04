@@ -46,6 +46,9 @@ export interface IJobExperienceFields {
   /** Address */
   address: string;
 
+  /** Website */
+  website?: string | undefined;
+
   /** Role */
   role: string;
 
@@ -53,7 +56,10 @@ export interface IJobExperienceFields {
   startDate: string;
 
   /** End Date */
-  endDate: string;
+  endDate?: string | undefined;
+
+  /** Tenureship */
+  tenureship: string;
 
   /** Description */
   description: Document;
@@ -108,7 +114,40 @@ export interface IPhoto extends Entry<IPhotoFields> {
   };
 }
 
-export type CONTENT_TYPE = "hobby" | "jobExperience" | "photo";
+export interface IStartPageFields {
+  /** Title */
+  title?: string | undefined;
+
+  /** LinkedIn Page */
+  linkedInPage?: string | undefined;
+
+  /** Facebook Page */
+  facebookPage?: string | undefined;
+
+  /** Twitter Page */
+  twitterPage?: string | undefined;
+}
+
+/** Start Page */
+
+export interface IStartPage extends Entry<IStartPageFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "startPage";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export type CONTENT_TYPE = "hobby" | "jobExperience" | "photo" | "startPage";
 
 export type LOCALE_CODE = "en-US";
 
