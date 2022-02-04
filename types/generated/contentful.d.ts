@@ -66,6 +66,9 @@ export interface IJobExperienceFields {
 
   /** Photos */
   photos?: Asset[] | undefined;
+
+  /** Order */
+  order: number;
 }
 
 /** Job Experience */
