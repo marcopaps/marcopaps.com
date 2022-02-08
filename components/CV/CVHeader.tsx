@@ -1,10 +1,10 @@
-import { Avatar } from ".";
+import { Avatar } from "..";
 
 interface PropsType {
   className?: string;
 }
 
-const PersonalDetails = (props: PropsType) => {
+const CVHeader = (props: PropsType) => {
   return (
     <div className={props.className}>
       <div className="flex items-center bg-purple-900 text-white min-h-full">
@@ -27,4 +27,4 @@ const PersonalDetails = (props: PropsType) => {
   );
 };
 
-export default PersonalDetails;
+export default CVHeader;
