@@ -117,6 +117,33 @@ export interface IPhoto extends Entry<IPhotoFields> {
   };
 }
 
+export interface ISkillFields {
+  /** Name */
+  name: string;
+
+  /** Rating */
+  rating: number;
+}
+
+/** CV Skill */
+
+export interface ISkill extends Entry<ISkillFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "skill";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IStartPageFields {
   /** Title */
   title?: string | undefined;
@@ -150,7 +177,12 @@ export interface IStartPage extends Entry<IStartPageFields> {
   };
 }
 
-export type CONTENT_TYPE = "hobby" | "jobExperience" | "photo" | "startPage";
+export type CONTENT_TYPE =
+  | "hobby"
+  | "jobExperience"
+  | "photo"
+  | "skill"
+  | "startPage";
 
 export type LOCALE_CODE = "en-US";
 

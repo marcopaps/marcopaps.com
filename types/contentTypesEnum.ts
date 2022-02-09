@@ -5,4 +5,5 @@ export enum ContentTypes {
   HOBBY = "hobby",
   PHOTOS = "photos",
   JOB_EXPERIENCE = "jobExperience",
+  SKILL = "skill",
 }
