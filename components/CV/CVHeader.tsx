@@ -1,10 +1,10 @@
 import { Avatar } from "..";
 
-interface PropsType {
+interface IProps {
   className?: string;
 }
 
-const CVHeader = (props: PropsType) => {
+const CVHeader = (props: IProps) => {
   return (
     <div className={props.className}>
       <div className="flex items-center bg-purple-900 text-white min-h-full">

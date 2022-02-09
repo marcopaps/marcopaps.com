@@ -5,7 +5,7 @@ import { ContentTypes } from "@/types/contentTypesEnum";
 import type { NextPage } from "next";
 import type { IHobby } from "@/types/generated/contentful";
 
-type PropsType = {
+type IProps = {
   hobbies: IHobby[];
 };
 
@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage<PropsType> = ({ hobbies }) => {
+const Home: NextPage<IProps> = ({ hobbies }) => {
   return (
     <div>
       <h1 className="text-3xl font-bold text-center m-12">Hobbies page</h1>

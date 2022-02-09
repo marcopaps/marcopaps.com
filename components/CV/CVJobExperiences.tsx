@@ -4,12 +4,12 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import type { IJobExperience } from "@/types/generated/contentful";
 import { CVSection } from "..";
 
-interface PropsType {
+interface IProps {
   jobExperiences: IJobExperience[];
   className?: string;
 }
 
-const JobExperiences = (props: PropsType) => {
+const JobExperiences = (props: IProps) => {
   return (
     <div className={props.className}>
       <hr />

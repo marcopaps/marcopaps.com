@@ -6,7 +6,7 @@ import type { NextPage, GetStaticPropsContext } from "next";
 import type { EntryCollection } from "contentful";
 import type { IHobby, IHobbyFields } from "@/types/generated/contentful";
 
-interface PropsType {
+interface IProps {
   hobby: IHobby;
 }
 
@@ -52,7 +52,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   };
 };
 
-const Hobby: NextPage<PropsType> = ({ hobby }: PropsType) => {
+const Hobby: NextPage<IProps> = ({ hobby }: IProps) => {
   if (!hobby) {
     return <>{"Loading..."}</>;
   }

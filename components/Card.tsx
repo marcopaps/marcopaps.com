@@ -2,14 +2,14 @@ import { useCallback } from "react";
 import NextLink from "next/link";
 import type { Asset } from "contentful";
 
-interface PropsType {
+interface IProps {
   title?: string;
   description?: string;
   to?: string;
   image?: Asset;
 }
 
-export default function Thubmnail(props: PropsType) {
+export default function Thubmnail(props: IProps) {
   const Base = useCallback(
     ({ children }) => {
       if (props.to) {
