@@ -144,6 +144,48 @@ export interface ISkill extends Entry<ISkillFields> {
   };
 }
 
+export interface ISocialLinkFields {
+  /** Label */
+  label: string;
+
+  /** Url */
+  url: string;
+
+  /** Icon */
+  icon:
+    | "facebook"
+    | "twitter"
+    | "linkedin"
+    | "github"
+    | "instagram"
+    | "website";
+
+  /** Order */
+  order: number;
+
+  /** Color */
+  color?: string | undefined;
+}
+
+/** Social links */
+
+export interface ISocialLink extends Entry<ISocialLinkFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "socialLink";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IStartPageFields {
   /** Title */
   title?: string | undefined;
@@ -182,6 +224,7 @@ export type CONTENT_TYPE =
   | "jobExperience"
   | "photo"
   | "skill"
+  | "socialLink"
   | "startPage";
 
 export type LOCALE_CODE = "en-US";

@@ -6,4 +6,5 @@ export enum ContentTypes {
   PHOTOS = "photos",
   JOB_EXPERIENCE = "jobExperience",
   SKILL = "skill",
+  SOCIAL_LINK = "socialLink",
 }
