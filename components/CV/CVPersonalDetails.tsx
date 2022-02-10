@@ -1,44 +1,33 @@
 import { CVSection, CVSkill } from ".";
+import { IconFB } from "@/icons";
 
-import type { ISkill, IHobby } from "@/types/generated/contentful";
+import type { ISkill, IHobby, ISocialLink } from "@/types/generated/contentful";
+import { getIcon } from "@/icons/getIcon";
 
 interface IProps {
   skills?: ISkill[];
   hobbies?: IHobby[];
+  socialLinks?: ISocialLink[];
   className?: string;
 }
-
-const SOCIAL_LINKS = [
-  {
-    label: "LinkedIn",
-    text: "marcopaps",
-    url: "https://www.linkedin.com/in/marcopaps",
-  },
-  {
-    label: "Facebook",
-    text: "marcopapssss",
-    url: "https://www.facebook.com/marcopapssss",
-  },
-];
 
 export const CVPersonalDetails: React.FC<IProps> = (props) => {
   return (
     <div className={props.className}>
       {/* Social links section */}
 
-      <CVSection title="Social Links">
-        <div className="py-8">
-          {SOCIAL_LINKS.map((item) => {
+      <CVSection title="Socials">
+        <div className="flex py-2">
+          {props.socialLinks?.map((item) => {
             return (
-              <div className="flex py-1" key={item.url}>
-                <div>{item.label}</div>
-                <div>
+              <div className="flex pr-4" key={item.fields.url}>
+                <div className="w-6">
                   <a
                     className="text-blue-900 px-4"
-                    href={item.url}
+                    href={item.fields.url}
                     target="blank"
                   >
-                    {item.text}
+                    {getIcon(item.fields.icon, item.fields?.color)}
                   </a>
                 </div>
               </div>
