@@ -17,9 +17,9 @@ const CVHeader = (props: IProps) => {
           </div>
 
           {/* Information section */}
-          <div className="flex py-4 text-gray-100 text-sm">
+          <div className="sm:block md:flex py-4 text-gray-100 text-sm">
             <div className="test">{"Email: hello@marcopaps.com"}</div>
-            <div className="ml-4">{"Phone: +639 61 204 8584"}</div>
+            <div className="md:ml-4">{"Phone: +639 61 204 8584"}</div>
           </div>
         </div>
       </div>

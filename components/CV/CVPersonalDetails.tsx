@@ -1,5 +1,5 @@
 import { CVSection, CVSkill } from ".";
-import { IconFB } from "@/icons";
+import useIsMobile from "@/hooks/useIsMobile";
 
 import type { ISkill, IHobby, ISocialLink } from "@/types/generated/contentful";
 import { getIcon } from "@/icons/getIcon";
@@ -12,11 +12,11 @@ interface IProps {
 }
 
 export const CVPersonalDetails: React.FC<IProps> = (props) => {
-  return (
-    <div className={props.className}>
-      {/* Social links section */}
+  const isMobile = useIsMobile();
 
-      <CVSection title="Socials">
+  const renderSocials = () => {
+    return (
+      <CVSection title="Socials" hr={isMobile}>
         <div className="flex py-2">
           {props.socialLinks?.map((item) => {
             return (
@@ -35,6 +35,13 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
           })}
         </div>
       </CVSection>
+    );
+  };
+
+  return (
+    <div className={props.className}>
+      {/* Social links section */}
+      {!isMobile && renderSocials()}
 
       {/* Skills section */}
 
@@ -73,6 +80,8 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
           })}
         </div>
       </CVSection>
+
+      {isMobile && renderSocials()}
     </div>
   );
 };

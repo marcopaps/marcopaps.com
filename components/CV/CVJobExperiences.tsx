@@ -22,11 +22,11 @@ const JobExperiences = (props: IProps) => {
               : "Present";
 
             return (
-              <div className="py-8 text-gray-800" key={item.sys.id}>
+              <div className="pt-8 text-gray-800" key={item.sys.id}>
                 {/* Job header section */}
 
-                <div className="flex md:block lg:flex items-center font-bold my-2">
-                  <div className="md:text-lg text-purple-900">
+                <div className="block md:block lg:flex items-center font-bold my-2">
+                  <div className="text-lg text-purple-900">
                     {item.fields.role}
                   </div>
                   <div className="lg:ml-4">{item.fields.company}</div>

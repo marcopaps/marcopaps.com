@@ -66,17 +66,16 @@ const Resume: NextPage<IProps> = (props) => {
   return (
     <div>
       {/* Header */}
-
       <CVHeader className="sticky inset-0 z-10" />
 
-      {/* Job experiences and profile intro section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 px-6 lg:px-48 md:my-8">
+        {/* Job experiences and profile intro section */}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 px-6 lg:px-48 my-8">
-        <div className="col-span-2 m-8">
+        <div className="md:col-span-2 mt-8 md:m-4">
           <CVSection title="Profile">
             <div className="font-lg block md:flex items-center py-4">
               {
-                "Dedicated and motivated IT graduate seeking advanced level manager position"
+                "I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies."
               }
             </div>
           </CVSection>
@@ -88,7 +87,7 @@ const Resume: NextPage<IProps> = (props) => {
 
         {/* Personal details */}
 
-        <div className="md:border-l-2 p-4">
+        <div className="md:border-l-2 md:p-4">
           {
             <CVPersonalDetails
               skills={props.skills}
