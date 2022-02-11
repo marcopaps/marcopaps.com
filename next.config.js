@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ["images.ctfassets.net"],
-  },
   async rewrites() {
     return [
       {
-        source: "/",
+        source: "/cv",
         destination: "/home",
       },
     ];
@@ -20,6 +17,10 @@ const nextConfig = {
     });
 
     return config;
+  },
+  i18n: {
+    locales: ["en-US"],
+    defaultLocale: "en-US",
   },
 };
 

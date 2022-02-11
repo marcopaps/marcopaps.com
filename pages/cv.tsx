@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Client } from "@/utils/contentfulApi";
 import { ContentTypes } from "@/types/contentTypesEnum";
 import {
@@ -65,6 +66,11 @@ export async function getStaticProps() {
 const Resume: NextPage<IProps> = (props) => {
   return (
     <div>
+      <Head>
+        <title>Marco Budiongan - CV</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Marco Budiongan - CV"></meta>
+      </Head>
       {/* Header */}
       <CVHeader className="sticky inset-0 z-10" />
 

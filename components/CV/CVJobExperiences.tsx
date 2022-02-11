@@ -1,12 +1,12 @@
-import dayjs from "dayjs";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import dayjs from 'dayjs'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import type { IJobExperience } from "@/types/generated/contentful";
-import { CVSection } from "..";
+import type { IJobExperience } from '@/types/generated/contentful'
+import { CVSection } from '..'
 
 interface IProps {
-  jobExperiences: IJobExperience[];
-  className?: string;
+  jobExperiences: IJobExperience[]
+  className?: string
 }
 
 const JobExperiences = (props: IProps) => {
@@ -16,16 +16,16 @@ const JobExperiences = (props: IProps) => {
       <CVSection title="Employment">
         {props.jobExperiences.length > 0 &&
           props.jobExperiences.map((item) => {
-            const startDate = dayjs(item.fields.startDate).format("MMMM YYYY");
+            const startDate = dayjs(item.fields.startDate).format('MMMM YYYY')
             const endDate = item.fields.endDate
-              ? dayjs(item.fields.endDate).format("MMMM YYYY")
-              : "Present";
+              ? dayjs(item.fields.endDate).format('MMMM YYYY')
+              : 'Present'
 
             return (
               <div className="pt-8 text-gray-800" key={item.sys.id}>
                 {/* Job header section */}
 
-                <div className="block md:block lg:flex items-center font-bold my-2">
+                <div className="my-2 block items-center font-bold md:block lg:flex">
                   <div className="text-lg text-purple-900">
                     {item.fields.role}
                   </div>
@@ -34,7 +34,7 @@ const JobExperiences = (props: IProps) => {
 
                 {/* Tenureship section */}
 
-                <div className="block md:flex items-center text-gray-400">{`${startDate} - ${endDate}  (${item.fields.tenureship})`}</div>
+                <div className="block items-center text-gray-400 md:flex">{`${startDate} - ${endDate}  (${item.fields.tenureship})`}</div>
 
                 {/* Responsibiliies section */}
 
@@ -42,11 +42,11 @@ const JobExperiences = (props: IProps) => {
                   {documentToReactComponents(item.fields.description)}
                 </div>
               </div>
-            );
+            )
           })}
       </CVSection>
     </div>
-  );
-};
+  )
+}
 
-export default JobExperiences;
+export default JobExperiences

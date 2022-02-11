@@ -8,7 +8,7 @@ const CVHeader = (props: IProps) => {
   return (
     <div className={props.className}>
       <div className="flex items-center bg-purple-900 text-white min-h-full">
-        <Avatar className="pr-8" />
+        <Avatar className="pr-4 md:pr-8" />
 
         <div className="block">
           {/* Name section */}
