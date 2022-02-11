@@ -4,6 +4,7 @@ import {
   IconInstagram,
   IconLinkedIn,
   IconTwitter,
+  IconWebsite,
 } from ".";
 
 export const getIcon = (icon: string, fill?: string) => {
@@ -12,4 +13,5 @@ export const getIcon = (icon: string, fill?: string) => {
   if (icon === "twitter") return <IconTwitter fill={fill} />;
   if (icon === "github") return <IconGithub fill={fill} />;
   if (icon === "instagram") return <IconInstagram fill={fill} />;
+  if (icon === "website") return <IconWebsite fill={fill} />;
 };
