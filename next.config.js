@@ -4,8 +4,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/cv',
-        destination: '/home',
+        source: '/',
+        destination: '/cv',
       },
     ];
   },

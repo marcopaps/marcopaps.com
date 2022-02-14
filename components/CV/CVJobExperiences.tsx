@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import type { IJobExperience } from '@/types/generated/contentful';
-import { CVSection } from '..';
+import { CVSection } from '.';
 
 interface IProps {
   jobExperiences: IJobExperience[];
