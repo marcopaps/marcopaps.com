@@ -34,7 +34,7 @@ const JobExperiences = (props: IProps) => {
 
                 {/* Tenureship section */}
 
-                <div className="block items-center text-gray-400 md:flex">{`${startDate} - ${endDate}  (${item.fields.tenureship})`}</div>
+                <div className="block items-center text-gray-500 md:flex">{`${startDate} - ${endDate}  (${item.fields.tenureship})`}</div>
 
                 {/* Responsibiliies section */}
 

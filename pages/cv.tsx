@@ -79,7 +79,7 @@ const Resume: NextPage<IProps> = (props) => {
 
         <div className="mt-8 md:col-span-2 md:m-4">
           <CVSection title="Profile">
-            <div className="font-lg block items-center py-4 md:flex">
+            <div className="font-lg block items-center py-4">
               {
                 'I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies.'
               }

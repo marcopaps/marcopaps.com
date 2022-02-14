@@ -1,5 +1,3 @@
-import React from 'react';
-
 type CVSectionProps = {
   title: string;
   hr?: boolean;
