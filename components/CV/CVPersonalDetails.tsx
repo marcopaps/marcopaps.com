@@ -1,4 +1,4 @@
-import { CVSection, CVSkill } from '.';
+import { CVSection, CVSkill } from '@/components';
 import useIsMobile from '@/hooks/useIsMobile';
 
 import type { ISkill, IHobby, ISocialLink } from '@/types/generated/contentful';

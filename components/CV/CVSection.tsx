@@ -1,11 +1,11 @@
-type CVSectionProps = {
+interface CVSectionProps {
   title: string;
   hr?: boolean;
   className?: string;
   children?: React.ReactNode;
-};
+}
 
-export default function CVSection(props: CVSectionProps) {
+const CVSection = (props: CVSectionProps) => {
   return (
     <div className={props.className}>
       {props.hr && <hr />}
@@ -13,4 +13,6 @@ export default function CVSection(props: CVSectionProps) {
       {props.children}
     </div>
   );
-}
+};
+
+export default CVSection;
