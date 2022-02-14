@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo } from 'react';
 
 export enum RatingEnum {
   NONE,
@@ -10,9 +10,9 @@ export enum RatingEnum {
 }
 
 interface IProps {
-  label: string
-  rating: RatingEnum
-  className?: string
+  label: string;
+  rating: RatingEnum;
+  className?: string;
 }
 
 const Skill = (props: IProps) => {
@@ -20,15 +20,15 @@ const Skill = (props: IProps) => {
   const width = useMemo(() => {
     return props.rating != RatingEnum.VERY_HIGH
       ? `w-${props.rating}/5`
-      : 'w-full'
-  }, [props.rating])
+      : 'w-full';
+  }, [props.rating]);
   return (
     <div className={props.className}>
       <div className="pt-2 font-bold">{props.label}</div>
       <div className="absolute h-4 w-full rounded-lg bg-gray-100" />
       <div className={`absolute h-4 rounded-lg bg-purple-900 ${width}`} />
     </div>
-  )
-}
+  );
+};
 
-export default Skill
+export default Skill;

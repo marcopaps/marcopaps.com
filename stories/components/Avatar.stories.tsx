@@ -1,9 +1,9 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Avatar } from "../../components/";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Avatar } from '../../components/';
 
 export default {
-  title: "Components/Avatar",
+  title: 'Components/Avatar',
   component: Avatar,
   argTypes: {},
 } as ComponentMeta<typeof Avatar>;

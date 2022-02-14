@@ -4,8 +4,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/cv",
-        destination: "/home",
+        source: '/cv',
+        destination: '/home',
       },
     ];
   },
@@ -13,14 +13,14 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
 
     return config;
   },
   i18n: {
-    locales: ["en-US"],
-    defaultLocale: "en-US",
+    locales: ['en-US'],
+    defaultLocale: 'en-US',
   },
 };
 

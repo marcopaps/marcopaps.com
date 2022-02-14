@@ -7,7 +7,7 @@
     "start": "next build && next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "codegen": "contentful-typescript-codegen --output types/generated/contentful.d.ts",
+    "codegen": "contentful-typescript-codegen --output types/generated/contentful.d.ts && format",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "analyze": "cross-env ANALYZE=true next build"

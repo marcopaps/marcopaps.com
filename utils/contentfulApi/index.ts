@@ -1,6 +1,6 @@
-import dotenv from "dotenv";
-import { createClient } from "contentful";
-import type { ContentfulClientApi } from "contentful";
+import dotenv from 'dotenv';
+import { createClient } from 'contentful';
+import type { ContentfulClientApi } from 'contentful';
 
 dotenv.config();
 

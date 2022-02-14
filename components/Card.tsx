@@ -1,6 +1,6 @@
-import { useCallback } from "react";
-import NextLink from "next/link";
-import type { Asset } from "contentful";
+import { useCallback } from 'react';
+import NextLink from 'next/link';
+import type { Asset } from 'contentful';
 
 interface IProps {
   title?: string;
@@ -45,14 +45,14 @@ export default function Thubmnail(props: IProps) {
 
   const renderImage = useCallback(() => {
     if (props.image) {
-      const imageUrl = props.image?.fields.file.url || "/vercel.svg";
+      const imageUrl = props.image?.fields.file.url || '/vercel.svg';
       return <img className="rounded-t-lg " src={`https:${imageUrl}`} alt="" />;
     }
   }, [props.image]);
 
   return (
     <Base>
-      <div className="relative m-auto max-w-sm h-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div className="relative m-auto h-full max-w-sm rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
         {renderImage()}
         <div className="p-5">
           {renderTitle()}

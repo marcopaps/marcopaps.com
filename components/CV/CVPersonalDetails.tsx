@@ -1,7 +1,7 @@
-import { CVSection, CVSkill } from ".";
-import useIsMobile from "@/hooks/useIsMobile";
+import { CVSection, CVSkill } from '.';
+import useIsMobile from '@/hooks/useIsMobile';
 
-import type { ISkill, IHobby, ISocialLink } from "@/types/generated/contentful";
+import type { ISkill, IHobby, ISocialLink } from '@/types/generated/contentful';
 // import { getIcon } from "@/icons/getIcon";
 
 interface IProps {
@@ -53,7 +53,7 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
                 key={item.sys.id}
                 label={item.fields.name}
                 rating={item.fields.rating}
-                className="py-4 relative"
+                className="relative py-4"
               />
             );
           })}
@@ -69,7 +69,7 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
               <div className="flex items-center py-2" key={item.fields.title}>
                 <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
                 <a
-                  className="px-2 hover:underline hover:text-purple-900"
+                  className="px-2 hover:text-purple-900 hover:underline"
                   href={`/hobbies/${item.fields.slug}`}
                   target="blank"
                 >

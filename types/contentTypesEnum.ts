@@ -2,9 +2,9 @@
 // Will work if project is not too complicated
 
 export enum ContentTypes {
-  HOBBY = "hobby",
-  PHOTOS = "photos",
-  JOB_EXPERIENCE = "jobExperience",
-  SKILL = "skill",
-  SOCIAL_LINK = "socialLink",
+  HOBBY = 'hobby',
+  PHOTOS = 'photos',
+  JOB_EXPERIENCE = 'jobExperience',
+  SKILL = 'skill',
+  SOCIAL_LINK = 'socialLink',
 }

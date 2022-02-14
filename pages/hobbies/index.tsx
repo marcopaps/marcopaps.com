@@ -1,9 +1,9 @@
-import Card from "@/components/Card";
-import { Client } from "@/utils/contentfulApi";
-import { ContentTypes } from "@/types/contentTypesEnum";
+import Card from '@/components/Card';
+import { Client } from '@/utils/contentfulApi';
+import { ContentTypes } from '@/types/contentTypesEnum';
 
-import type { NextPage } from "next";
-import type { IHobby } from "@/types/generated/contentful";
+import type { NextPage } from 'next';
+import type { IHobby } from '@/types/generated/contentful';
 
 type IProps = {
   hobbies: IHobby[];
@@ -23,7 +23,7 @@ export async function getStaticProps() {
 const Home: NextPage<IProps> = ({ hobbies }) => {
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center m-12">Hobbies page</h1>
+      <h1 className="m-12 text-center text-3xl font-bold">Hobbies page</h1>
       <div className="m-12">
         {hobbies?.map((hobby) => (
           <div className="my-16" key={hobby.sys.id}>

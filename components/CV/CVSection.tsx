@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type CVSectionProps = {
   title: string;
@@ -11,7 +11,7 @@ export default function CVSection(props: CVSectionProps) {
   return (
     <div className={props.className}>
       {props.hr && <hr />}
-      <div className="text-2xl font-bold my-2">{props.title}</div>
+      <div className="my-2 text-2xl font-bold">{props.title}</div>
       {props.children}
     </div>
   );

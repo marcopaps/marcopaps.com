@@ -1,20 +1,20 @@
-import Head from "next/head";
-import { Client } from "@/utils/contentfulApi";
-import { ContentTypes } from "@/types/contentTypesEnum";
+import Head from 'next/head';
+import { Client } from '@/utils/contentfulApi';
+import { ContentTypes } from '@/types/contentTypesEnum';
 import {
   CVHeader,
   CVSection,
   CVJobExperiences,
   CVPersonalDetails,
-} from "@/components";
+} from '@/components';
 
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 import type {
   IHobby,
   IJobExperience,
   ISkill,
   ISocialLink,
-} from "@/types/generated/contentful";
+} from '@/types/generated/contentful';
 
 interface IProps {
   jobExperiences: IJobExperience[];
@@ -26,19 +26,19 @@ interface IProps {
 const contentfulEntries = [
   {
     content_type: ContentTypes.JOB_EXPERIENCE,
-    order: "-fields.order",
+    order: '-fields.order',
   },
   {
     content_type: ContentTypes.SKILL,
-    order: "-fields.rating",
+    order: '-fields.rating',
   },
   {
     content_type: ContentTypes.HOBBY,
-    order: "-fields.title",
+    order: '-fields.title',
   },
   {
     content_type: ContentTypes.SOCIAL_LINK,
-    order: "-fields.order",
+    order: '-fields.order',
   },
 ];
 
@@ -74,14 +74,14 @@ const Resume: NextPage<IProps> = (props) => {
       {/* Header */}
       <CVHeader className="sticky inset-0 z-10" />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 px-6 lg:px-48 md:my-8">
+      <div className="grid grid-cols-1 px-6 md:my-8 md:grid-cols-3 lg:px-48">
         {/* Job experiences and profile intro section */}
 
-        <div className="md:col-span-2 mt-8 md:m-4">
+        <div className="mt-8 md:col-span-2 md:m-4">
           <CVSection title="Profile">
-            <div className="font-lg block md:flex items-center py-4">
+            <div className="font-lg block items-center py-4 md:flex">
               {
-                "I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies."
+                'I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies.'
               }
             </div>
           </CVSection>

@@ -1,10 +1,10 @@
-import { ParsedUrlQuery } from "querystring";
-import { Client } from "@/utils/contentfulApi";
-import { ContentTypes } from "@/types/contentTypesEnum";
+import { ParsedUrlQuery } from 'querystring';
+import { Client } from '@/utils/contentfulApi';
+import { ContentTypes } from '@/types/contentTypesEnum';
 
-import type { NextPage, GetStaticPropsContext } from "next";
-import type { EntryCollection } from "contentful";
-import type { IHobby, IHobbyFields } from "@/types/generated/contentful";
+import type { NextPage, GetStaticPropsContext } from 'next';
+import type { EntryCollection } from 'contentful';
+import type { IHobby, IHobbyFields } from '@/types/generated/contentful';
 
 interface IProps {
   hobby: IHobby;
@@ -35,12 +35,12 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   const entries = await Client.getEntries({
     content_type: ContentTypes.HOBBY,
-    "fields.slug": slug,
+    'fields.slug': slug,
   });
 
   if (!entries.total) {
     return {
-      redirect: { destination: "/", permanent: false },
+      redirect: { destination: '/', permanent: false },
     };
   }
 
@@ -54,7 +54,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
 const Hobby: NextPage<IProps> = ({ hobby }: IProps) => {
   if (!hobby) {
-    return <>{"Loading..."}</>;
+    return <>{'Loading...'}</>;
   }
 
   return (
