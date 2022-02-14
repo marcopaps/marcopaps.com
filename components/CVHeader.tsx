@@ -1,4 +1,4 @@
-import { Avatar } from '..';
+import { Avatar } from '.';
 
 interface IProps {
   className?: string;
