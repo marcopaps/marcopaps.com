@@ -26,6 +26,7 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
                     className="px-4 text-blue-900"
                     href={item.fields.url}
                     target="blank"
+                    aria-label={item.fields.label}
                   >
                     {getIcon(item.fields.icon, item.fields?.color)}
                   </a>
@@ -81,7 +82,7 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
         </div>
       </CVSection>
 
-      {/* {isMobile && renderSocials()} */}
+      {isMobile && renderSocials()}
     </div>
   );
 };

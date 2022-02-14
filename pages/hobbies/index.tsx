@@ -1,4 +1,4 @@
-import Card from '@/components/Card';
+import Card from '@/components/common/Card';
 import { Client } from '@/utils/contentfulApi';
 import { ContentTypes } from '@/types/contentTypesEnum';
 
