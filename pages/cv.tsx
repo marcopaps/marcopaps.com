@@ -6,6 +6,7 @@ import {
   CVSection,
   CVJobExperiences,
   CVPersonalDetails,
+  Footer,
 } from '@/components';
 
 import type { NextPage } from 'next';
@@ -103,6 +104,7 @@ const Resume: NextPage<IProps> = (props) => {
           }
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
