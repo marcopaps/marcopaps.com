@@ -14,7 +14,7 @@ const CVHeader = (props: IProps) => {
 
         <div className="block">
           {/* Name section */}
-          <div className="flex text-2xl font-bold sm:py-2 md:text-3xl">
+          <div className="flex text-2xl font-bold md:py-2 md:text-3xl">
             <div className="">Marco Budiongan</div>
           </div>
 
