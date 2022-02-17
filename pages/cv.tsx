@@ -1,5 +1,8 @@
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Client } from '@/utils/contentfulApi';
+
 import { ContentTypes } from '@/types/contentTypesEnum';
 import {
   CVHeader,
@@ -16,6 +19,7 @@ import type {
   ISkill,
   ISocialLink,
 } from '@/types/generated/contentful';
+import { load } from 'dotenv';
 
 interface IProps {
   jobExperiences: IJobExperience[];
@@ -65,47 +69,75 @@ export async function getStaticProps() {
 }
 
 const Resume: NextPage<IProps> = (props) => {
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleStart = (url: string) => {
+      url !== router.pathname ? setLoading(true) : setLoading(false);
+    };
+    const handleComplete = (url: string) => setLoading(false);
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+  }, [router]);
+
   return (
-    <div>
-      <Head>
-        <title>Marco Budiongan - CV</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Marco Budiongan - CV"></meta>
-      </Head>
-      {/* Header */}
-      <CVHeader className="sticky inset-0 z-10" />
+    <>
+      {console.log({ loading })}
+      {loading || !props ? (
+        <div className="w-full py-48 text-center text-gray-800">
+          {'Loading...'}
+        </div>
+      ) : (
+        <div>
+          <Head>
+            <title>Marco Budiongan</title>
+            <meta
+              name="viewport"
+              content="initial-scale=1.0, width=device-width"
+            />
+            <meta name="description" content="Marco Budiongan"></meta>
+          </Head>
 
-      <div className="grid grid-cols-1 px-6 md:my-8 md:grid-cols-3 lg:px-24 xl:px-48">
-        {/* Job experiences and profile intro section */}
+          {/* Header */}
 
-        <div className="mt-8 md:col-span-2 md:m-4">
-          <CVSection title="Profile">
-            <div className="font-lg block items-center py-4">
+          <CVHeader className="sticky inset-0 z-10" />
+
+          <div className="grid grid-cols-1 px-6 md:my-8 md:grid-cols-3 lg:px-24 xl:px-48">
+            {/* Job experiences and profile intro section */}
+
+            <div className="mt-8 md:col-span-2 md:m-4">
+              <CVSection title="Profile">
+                <div className="font-lg text-md block items-center py-4 text-gray-800 md:text-lg">
+                  {
+                    'I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies.'
+                  }
+                </div>
+              </CVSection>
+              <CVJobExperiences
+                className="my-8"
+                jobExperiences={props.jobExperiences}
+              />
+            </div>
+
+            {/* Personal details */}
+
+            <div className="md:border-l-2 md:p-4">
               {
-                'I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies.'
+                <CVPersonalDetails
+                  skills={props.skills}
+                  hobbies={props.hobbies}
+                  socialLinks={props.socialLinks}
+                />
               }
             </div>
-          </CVSection>
-          <CVJobExperiences
-            className="my-8"
-            jobExperiences={props.jobExperiences}
-          />
+          </div>
+          <Footer />
         </div>
-
-        {/* Personal details */}
-
-        <div className="md:border-l-2 md:p-4">
-          {
-            <CVPersonalDetails
-              skills={props.skills}
-              hobbies={props.hobbies}
-              socialLinks={props.socialLinks}
-            />
-          }
-        </div>
-      </div>
-      <Footer />
-    </div>
+      )}
+    </>
   );
 };
 
