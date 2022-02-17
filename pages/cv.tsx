@@ -19,7 +19,6 @@ import type {
   ISkill,
   ISocialLink,
 } from '@/types/generated/contentful';
-import { load } from 'dotenv';
 
 interface IProps {
   jobExperiences: IJobExperience[];
@@ -85,7 +84,6 @@ const Resume: NextPage<IProps> = (props) => {
 
   return (
     <>
-      {console.log({ loading })}
       {loading || !props ? (
         <div className="w-full py-48 text-center text-gray-800">
           {'Loading...'}
@@ -99,6 +97,8 @@ const Resume: NextPage<IProps> = (props) => {
               content="initial-scale=1.0, width=device-width"
             />
             <meta name="description" content="Marco Budiongan"></meta>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
           </Head>
 
           {/* Header */}
