@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.11.1",
+    "axios": "^0.26.0",
     "contentful": "^9.1.5",
     "dayjs": "^1.10.7",
     "dotenv": "^11.0.0",

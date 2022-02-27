@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Client } from '@/utils/contentfulApi';
+import addSiteVisitCount from '@/utils/addSiteVisitCount';
 
 import { ContentTypes } from '@/types/contentTypesEnum';
 import {
@@ -80,6 +81,10 @@ const Resume: NextPage<IProps> = (props) => {
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
     router.events.on('routeChangeError', handleComplete);
+
+    if (process.env.NODE_ENV === 'production') {
+      addSiteVisitCount();
+    }
   }, [router]);
 
   return (
