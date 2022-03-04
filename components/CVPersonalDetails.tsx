@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { CVSection, CVSkill } from '@/components';
 import useIsMobile from '@/hooks/useIsMobile';
 
@@ -65,20 +66,14 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
 
       <CVSection className="py-8" title="Hobbies" hr>
         <div>
-          {props.hobbies?.map((item) => {
-            return (
-              <div className="flex items-center py-2" key={item.fields.title}>
-                <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
-                <a
-                  className="px-2 hover:text-purple-900 hover:underline"
-                  href={`/hobbies/${item.fields.slug}`}
-                  target="blank"
-                >
-                  {item.fields.title}
-                </a>
-              </div>
-            );
-          })}
+          <div className="flex items-center py-2">
+            <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
+            <Link href="https://marcopaps.photos/rides">
+              <a className="ml-2" target="_blank">
+                Motorcycles
+              </a>
+            </Link>
+          </div>
         </div>
       </CVSection>
 

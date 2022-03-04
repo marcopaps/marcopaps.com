@@ -1,4 +1,5 @@
 import { ParsedUrlQuery } from 'querystring';
+import Link from 'next/link';
 import { Client } from '@/utils/contentfulApi';
 import { ContentTypes } from '@/types/contentTypesEnum';
 
@@ -58,10 +59,14 @@ const Hobby: NextPage<IProps> = ({ hobby }: IProps) => {
   }
 
   return (
-    <>
-      <h1>{hobby.fields.title}</h1>
-      <p>{hobby.fields.description}</p>
-    </>
+    <div className="flex justify-center pt-52">
+      <div className="text-center">
+        <h1>{'Page is still under contruction...'}</h1>
+        <div className="pt-8 text-purple-900 hover:underline">
+          <Link href="/">{'Back to home page'}</Link>
+        </div>
+      </div>
+    </div>
   );
 };
 

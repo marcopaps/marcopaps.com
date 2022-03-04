@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Profile from 'public/profile.webp';
+import Profile from 'public/profile.png';
 
 interface AvatarProps {
   className?: string;

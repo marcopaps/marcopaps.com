@@ -76,15 +76,16 @@ const Resume: NextPage<IProps> = (props) => {
     const handleStart = (url: string) => {
       url !== router.pathname ? setLoading(true) : setLoading(false);
     };
-    const handleComplete = (url: string) => setLoading(false);
+    const handleComplete = (url: string) => {
+      if (process.env.NODE_ENV === 'production') {
+        addSiteVisitCount();
+      }
+      setLoading(false);
+    };
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
     router.events.on('routeChangeError', handleComplete);
-
-    if (process.env.NODE_ENV === 'production') {
-      addSiteVisitCount();
-    }
   }, [router]);
 
   return (
