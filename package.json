@@ -2,12 +2,12 @@
   "name": "marcopaps-contentful-nextjs",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn format && next dev",
+    "build": "yarn codegen && next build",
     "start": "next build && next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "codegen": "contentful-typescript-codegen --output types/generated/contentful.d.ts && format",
+    "codegen": "contentful-typescript-codegen --output types/generated/contentful.d.ts",
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
