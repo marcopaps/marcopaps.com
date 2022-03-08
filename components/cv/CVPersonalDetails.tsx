@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CVSection, CVSkill } from '@/components';
+import { CVSection, CVSkill } from '@/components/cv';
 import useIsMobile from '@/hooks/useIsMobile';
 
 import type { ISkill, IHobby, ISocialLink } from '@/types/generated/contentful';

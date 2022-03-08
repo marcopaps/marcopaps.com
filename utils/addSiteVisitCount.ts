@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default async function addSiteVisitCount() {
+export async function addSiteVisitCount() {
   try {
     return axios.post(
       'https://marcopapsserverless.azurewebsites.net/api/AddSiteVisitCount',

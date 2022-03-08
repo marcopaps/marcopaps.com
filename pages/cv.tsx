@@ -1,17 +1,16 @@
 import Head from 'next/head';
+import { addSiteVisitCount } from '@/utils/addSiteVisitCount';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Client } from '@/utils/contentfulApi';
-import addSiteVisitCount from '@/utils/addSiteVisitCount';
-
 import { ContentTypes } from '@/types/contentTypesEnum';
+import { Footer } from '@/components/common';
 import {
   CVHeader,
   CVSection,
   CVJobExperiences,
   CVPersonalDetails,
-  Footer,
-} from '@/components';
+} from '@/components/cv';
 
 import type { NextPage } from 'next';
 import type {

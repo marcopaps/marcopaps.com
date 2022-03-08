@@ -1,4 +1,5 @@
-import { Avatar } from '.';
+import { Avatar } from '@/components/common';
+import Profile from 'public/profile.png';
 
 interface IProps {
   className?: string;
@@ -9,7 +10,7 @@ const CVHeader = (props: IProps) => {
     <div className={props.className}>
       <div className="flex items-center bg-purple-900 text-white">
         <div className="relative inline-flex max-h-28 pr-4 md:max-h-32 md:pr-8 ">
-          <Avatar />
+          <Avatar profileImage={Profile} />
         </div>
 
         <div className="block">
