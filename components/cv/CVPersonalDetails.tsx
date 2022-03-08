@@ -18,10 +18,10 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
   const renderSocials = () => {
     return (
       <CVSection title="Socials" hr={isMobile}>
-        <div className="flex py-2">
+        <div className="flex">
           {props.socialLinks?.map((item) => {
             return (
-              <div className="flex pr-4" key={item.fields.url}>
+              <div className="pr-4" key={item.fields.url}>
                 <div className="w-6">
                   <a
                     className="px-4 text-blue-900"
@@ -64,9 +64,9 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
 
       {/* Hobbies section */}
 
-      <CVSection className="py-8" title="Hobbies" hr>
+      <CVSection title="Hobbies" hr>
         <div>
-          <div className="flex items-center py-2">
+          <div className="flex items-center">
             <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
             <Link href="https://marcopaps.photos/rides">
               <a className="ml-2" target="_blank">

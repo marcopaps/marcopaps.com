@@ -27,14 +27,14 @@ const Skill = (props: IProps) => {
   return (
     <div className={props.className}>
       <div className="pt-2 font-bold">{props.label}</div>
-      <div className="absolute h-4 w-full rounded-lg bg-gray-100">
-        <span
-          className={`absolute z-10 w-full rounded-lg text-center text-xs ${ratingTextColor}`}
+      <div className="absolute h-5 w-full rounded-lg bg-gray-100">
+        <div
+          className={`absolute z-10 flex h-5 w-full items-center justify-center rounded-lg text-center text-xs ${ratingTextColor}`}
         >
           {RatingEnum[props.rating]}
-        </span>
+        </div>
       </div>
-      <div className={`absolute h-4 rounded-lg bg-purple-900 ${width}`} />
+      <div className={`absolute h-5 rounded-lg bg-purple-900 ${width}`} />
     </div>
   );
 };

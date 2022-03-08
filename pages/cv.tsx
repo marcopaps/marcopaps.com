@@ -115,16 +115,15 @@ const Resume: NextPage<IProps> = (props) => {
 
             <div className="mt-8 md:col-span-2 md:m-4">
               <CVSection title="Profile">
-                <div className="font-lg text-md block items-center py-4 text-gray-800 md:text-lg">
+                <div className="font-lg text-md block items-center text-gray-800 md:text-lg">
                   {
                     'I am a full stack JS developer experienced in leveraging agile frameworks. Has experience working  in various projects for both corporate and start-up companies.'
                   }
                 </div>
               </CVSection>
-              <CVJobExperiences
-                className="my-8"
-                jobExperiences={props.jobExperiences}
-              />
+              <CVSection title="Employment" hr>
+                <CVJobExperiences jobExperiences={props.jobExperiences} />
+              </CVSection>
             </div>
 
             {/* Personal details */}

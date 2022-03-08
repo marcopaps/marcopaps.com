@@ -5,14 +5,16 @@ interface CVSectionProps {
   children?: React.ReactNode;
 }
 
-const CVSection = (props: CVSectionProps) => {
+export default function CVSection(props: CVSectionProps) {
+  const className = `py-8 ${props.className ?? ''}`.trim();
+  const borderStyle = props.hr && 'border-t-2 pt-4';
+
   return (
-    <div className={props.className}>
-      {props.hr && <hr />}
-      <div className="my-2 text-2xl font-bold">{props.title}</div>
+    <div className={className}>
+      <div className={`${borderStyle} pb-4 text-2xl font-bold`}>
+        <span>{props.title}</span>
+      </div>
       {props.children}
     </div>
   );
-};
-
-export default CVSection;
+}
