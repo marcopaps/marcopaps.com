@@ -1,5 +1,5 @@
 import Card from '@/components/common/Card';
-import { Client } from '@/utils/contentfulApi';
+import { client } from '@/utils/contentful';
 import { ContentTypes } from '@/types/contentTypesEnum';
 
 import type { NextPage } from 'next';
@@ -10,7 +10,7 @@ type IProps = {
 };
 
 export async function getStaticProps() {
-  const entries = await Client.getEntries({
+  const entries = await client.getEntries({
     content_type: ContentTypes.HOBBY,
   });
 

@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import { addSiteVisitCount } from '@/utils/addSiteVisitCount';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Client } from '@/utils/contentfulApi';
-import { ContentTypes } from '@/types/contentTypesEnum';
+import { client, entries } from '@/utils/contentful';
+import { addSiteVisitCount } from '@/utils/common';
 import { Footer } from '@/components/common';
 import {
   CVHeader,
@@ -27,29 +26,10 @@ interface IProps {
   socialLinks: ISocialLink[];
 }
 
-const contentfulEntries = [
-  {
-    content_type: ContentTypes.JOB_EXPERIENCE,
-    order: '-fields.order',
-  },
-  {
-    content_type: ContentTypes.SKILL,
-    order: '-fields.rating',
-  },
-  {
-    content_type: ContentTypes.HOBBY,
-    order: '-fields.title',
-  },
-  {
-    content_type: ContentTypes.SOCIAL_LINK,
-    order: '-fields.order',
-  },
-];
-
 export async function getStaticProps() {
   const [jobExperiences, skills, hobbies, socialLinks] = await Promise.all(
-    contentfulEntries.map((query) =>
-      Client.getEntries({
+    entries.map((query) =>
+      client.getEntries({
         content_type: query.content_type,
         order: query.order,
       })

@@ -1,6 +1,6 @@
 import { ParsedUrlQuery } from 'querystring';
 import Link from 'next/link';
-import { Client } from '@/utils/contentfulApi';
+import { client } from '@/utils/contentful';
 import { ContentTypes } from '@/types/contentTypesEnum';
 
 import type { NextPage, GetStaticPropsContext } from 'next';
@@ -16,7 +16,7 @@ interface IParams extends ParsedUrlQuery {
 }
 
 export const getStaticPaths = async () => {
-  const result: EntryCollection<IHobbyFields> = await Client.getEntries({
+  const result: EntryCollection<IHobbyFields> = await client.getEntries({
     content_type: ContentTypes.HOBBY,
   });
 
@@ -34,7 +34,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { slug } = context.params as IParams;
 
-  const entries = await Client.getEntries({
+  const entries = await client.getEntries({
     content_type: ContentTypes.HOBBY,
     'fields.slug': slug,
   });

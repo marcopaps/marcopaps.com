@@ -21,4 +21,6 @@ const Contentful = (() => {
   };
 })();
 
-export const Client = Contentful.getClient();
+const client = Contentful.getClient();
+
+export default client;
