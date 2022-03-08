@@ -108,7 +108,7 @@ const Resume: NextPage<IProps> = (props) => {
 
           {/* Header */}
 
-          <CVHeader className="sticky inset-0 z-10" />
+          <CVHeader className="sticky inset-0 z-20" />
 
           <div className="grid grid-cols-1 px-6 md:my-8 md:grid-cols-3 lg:px-24 xl:px-48">
             {/* Job experiences and profile intro section */}
