@@ -1,23 +1,47 @@
 import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import type { IJobExperience } from '@/types/generated/contentful';
-import { CVSection } from '@/components/cv';
 
 interface IProps {
   jobExperiences: IJobExperience[];
   className?: string;
 }
 
+dayjs.extend(duration);
+
+const getJobTenureship = (startDate: string, endDate?: string) => {
+  const end = dayjs(endDate);
+  const start = dayjs(startDate);
+  const durationDiff = dayjs.duration(end.diff(start));
+
+  const yearsTenureship = durationDiff.get('years');
+  const monthsTenureship = durationDiff.get('months');
+
+  const startDateString = dayjs(startDate).format('MMMM YYYY');
+  const endDateString = endDate
+    ? dayjs(endDate).format('MMMM YYYY')
+    : 'Present';
+
+  const tenureshipString = `${yearsTenureship}${
+    yearsTenureship > 1 ? 'yrs' : 'yr'
+  } ${monthsTenureship}${monthsTenureship > 1 ? 'mos' : 'mo'}`;
+
+  return {
+    startDateString,
+    endDateString,
+    tenureshipString,
+  };
+};
+
 const JobExperiences = (props: IProps) => {
   return (
     <div className={props.className}>
       {props.jobExperiences.length > 0 &&
         props.jobExperiences.map((item) => {
-          const startDate = dayjs(item.fields.startDate).format('MMMM YYYY');
-          const endDate = item.fields.endDate
-            ? dayjs(item.fields.endDate).format('MMMM YYYY')
-            : 'Present';
+          const { startDateString, endDateString, tenureshipString } =
+            getJobTenureship(item.fields.startDate, item.fields.endDate);
 
           return (
             <div className="text-gray-800" key={item.sys.id}>
@@ -32,7 +56,7 @@ const JobExperiences = (props: IProps) => {
 
               {/* Tenureship section */}
 
-              <div className="block items-center text-gray-500 md:flex">{`${startDate} - ${endDate}  (${item.fields.tenureship})`}</div>
+              <div className="block items-center text-gray-500 md:flex">{`${startDateString} - ${endDateString}  (${tenureshipString})`}</div>
 
               {/* Responsibiliies section */}
 
