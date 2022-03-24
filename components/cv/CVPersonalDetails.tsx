@@ -15,9 +15,38 @@ interface IProps {
 export const CVPersonalDetails: React.FC<IProps> = (props) => {
   const isMobile = useIsMobile();
 
-  const renderSocials = () => {
-    return (
-      <CVSection title="Socials" hr={isMobile}>
+  return (
+    <div className={props.className}>
+      {/* Skills section */}
+      <CVSection title="Skills" hr={isMobile}>
+        <div>
+          {props.skills?.map((item) => {
+            return (
+              <CVSkill
+                key={item.sys.id}
+                label={item.fields.name}
+                rating={item.fields.rating}
+                className="relative py-4"
+              />
+            );
+          })}
+        </div>
+      </CVSection>
+
+      {/* Hobbies section */}
+      <CVSection title="Hobbies" hr>
+        <div className="flex items-center">
+          <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
+          <Link href="https://marcopaps.photos/rides">
+            <a className="ml-2" target="_blank">
+              Motorcycles
+            </a>
+          </Link>
+        </div>
+      </CVSection>
+
+      {/* Social links section */}
+      <CVSection title="Socials" hr>
         <div className="flex">
           {props.socialLinks?.map((item) => {
             return (
@@ -37,47 +66,6 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
           })}
         </div>
       </CVSection>
-    );
-  };
-
-  return (
-    <div className={props.className}>
-      {/* Social links section */}
-      {!isMobile && renderSocials()}
-
-      {/* Skills section */}
-
-      <CVSection title="Skills" hr>
-        <div>
-          {props.skills?.map((item) => {
-            return (
-              <CVSkill
-                key={item.sys.id}
-                label={item.fields.name}
-                rating={item.fields.rating}
-                className="relative py-4"
-              />
-            );
-          })}
-        </div>
-      </CVSection>
-
-      {/* Hobbies section */}
-
-      <CVSection title="Hobbies" hr>
-        <div>
-          <div className="flex items-center">
-            <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
-            <Link href="https://marcopaps.photos/rides">
-              <a className="ml-2" target="_blank">
-                Motorcycles
-              </a>
-            </Link>
-          </div>
-        </div>
-      </CVSection>
-
-      {isMobile && renderSocials()}
     </div>
   );
 };

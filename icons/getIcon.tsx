@@ -4,23 +4,24 @@ import IconGithub from 'public/github.svg';
 import IconTwitter from 'public/twitter.svg';
 import IconInstagram from 'public/instagram.svg';
 import IconWebsite from 'public/website.svg';
-import IconDefault from 'public/vercel.svg';
 
-export const getIcon = (icon: string, fill?: string) => {
-  switch (icon) {
-    case 'facebook':
-      return <IconFB fill={fill} />;
-    case 'linkedin':
-      return <IconLinkedIn fill={fill} />;
-    case 'twitter':
-      return <IconTwitter fill={fill} />;
-    case 'github':
-      return <IconGithub fill={fill} />;
-    case 'instagram':
-      return <IconInstagram fill={fill} />;
-    case 'website':
-      return <IconWebsite fill={fill} />;
-    default:
-      return <IconDefault fill={fill} />;
-  }
+type IconTypes =
+  | 'facebook'
+  | 'linkedin'
+  | 'twitter'
+  | 'github'
+  | 'instagram'
+  | 'website';
+
+export const getIcon = (icon: IconTypes, fill?: string) => {
+  const icons = {
+    facebook: <IconFB fill={fill} />,
+    linkedin: <IconLinkedIn fill={fill} />,
+    twitter: <IconTwitter fill={fill} />,
+    github: <IconGithub fill={fill} />,
+    instagram: <IconInstagram fill={fill} />,
+    website: <IconWebsite fill={fill} />,
+  };
+
+  return icons[icon];
 };
