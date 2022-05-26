@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import NextLink from 'next/link';
 import type { Asset } from 'contentful';
 
@@ -7,11 +7,12 @@ interface IProps {
   description?: string;
   to?: string;
   image?: Asset;
+  children?: React.ReactNode;
 }
 
-export default function Thubmnail(props: IProps) {
+export default function Thumbnail(props: IProps) {
   const Base = useCallback(
-    ({ children }) => {
+    ({ children }: { children: React.ReactNode }) => {
       if (props.to) {
         return <NextLink href={props.to}>{children}</NextLink>;
       }
