@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import { useEffect, memo } from 'react';
+import { memo } from 'react';
 import { client, entries } from '@/utils/contentful';
-import { addSiteVisitCount } from '@/utils/common';
 import { Footer } from '@/components/common';
 import {
   CVHeader,
@@ -47,12 +46,6 @@ export async function getStaticProps() {
 }
 
 const Resume: NextPage<IProps> = (props) => {
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      addSiteVisitCount();
-    }
-  }, []);
-
   return (
     <div>
       <Head>
