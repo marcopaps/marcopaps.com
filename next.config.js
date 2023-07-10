@@ -4,14 +4,6 @@ const nextConfig = {
     domains: ['images.ctfassets.net'],
   },
   reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/cv',
-      },
-    ];
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

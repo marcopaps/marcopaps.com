@@ -2,8 +2,8 @@
   "name": "marcopaps-contentful-nextjs",
   "private": true,
   "scripts": {
-    "dev": "yarn format && next dev",
-    "build": "yarn codegen && next build",
+    "dev": "next dev",
+    "build": "codegen && next build",
     "start": "next build && next start",
     "lint": "next lint",
     "format": "prettier --write .",
