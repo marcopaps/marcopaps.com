@@ -7,7 +7,7 @@ interface IProps {
 
 const Layout = ({ children, title = 'Marco Budiongan' }: IProps) => {
   return (
-    <div className="relative h-screen">
+    <main className="relative h-screen">
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -17,7 +17,7 @@ const Layout = ({ children, title = 'Marco Budiongan' }: IProps) => {
       </Head>
 
       {children}
-    </div>
+    </main>
   );
 };
 

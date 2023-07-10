@@ -23,18 +23,22 @@ export async function getStaticProps() {
 const Home = (props: IProps) => {
   return (
     <Layout>
-      <main className="bg-gradient-to-b from-gray-50 via-white to-gray-400 min-h-screen p-8 selection:text-white selection:bg-purple-600">
-        <p className="flex gap-4 flex-col">
-          <span className="font-bold text-6xl">Marco</span>
-          <span className="font-bold text-8xl text-purple-800">Budiongan</span>
+      <div className="min-h-screen p-8 sm:px-4 lg:p-8 bg-gradient-to-b from-gray-50 via-white to-gray-400 selection:text-white selection:bg-purple-600">
+        <p className="flex flex-col gap-2">
+          <span className="text-2xl font-bold lg:text-6xl md:text-5xl">
+            Marco
+          </span>
+          <span className="text-4xl font-bold text-purple-800 lg:text-8xl md:text-7xl">
+            Budiongan
+          </span>
         </p>
 
         {/* Links */}
-        <div className="mt-8 flex flex-col gap-4 text-gray-800 font-light">
+        <div className="flex flex-col gap-4 mt-6 font-light text-gray-800 lg:text-2xl md:text-lg">
           <p>
             <a
               href="mailto:hello@marcopaps.com"
-              className="text-2xl hover:underline hover:text-purple-800"
+              className="hover:underline hover:text-purple-800"
             >
               hello@marcopaps.com
             </a>
@@ -42,7 +46,7 @@ const Home = (props: IProps) => {
           <p>
             <a
               href="tel:+639612048584"
-              className="text-2xl hover:underline hover:text-purple-800"
+              className="hover:underline hover:text-purple-800"
             >
               +63 961 204 8584
             </a>
@@ -51,7 +55,7 @@ const Home = (props: IProps) => {
             <p key={socialLink.sys.id}>
               <a
                 href={socialLink.fields.url}
-                className="text-2xl hover:underline hover:text-purple-800"
+                className="hover:underline hover:text-purple-800"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -60,7 +64,7 @@ const Home = (props: IProps) => {
             </p>
           ))}
         </div>
-      </main>
+      </div>
     </Layout>
   );
 };
