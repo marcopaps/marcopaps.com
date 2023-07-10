@@ -2,13 +2,14 @@ import Head from 'next/head';
 
 interface IProps {
   children?: React.ReactNode;
+  title?: string;
 }
 
-const Layout = ({ children }: IProps) => {
+const Layout = ({ children, title = 'Marco Budiongan' }: IProps) => {
   return (
-    <div className="relative mx-48 h-full rounded-lg">
+    <div className="relative h-screen">
       <Head>
-        <title>Marco Budiongan</title>
+        <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Marco Budiongan"></meta>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
