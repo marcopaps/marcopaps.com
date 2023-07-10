@@ -16,6 +16,7 @@ import type {
   ISkill,
   ISocialLink,
 } from '@/types/generated/contentful';
+import Layout from '@/components/layout';
 
 interface IProps {
   jobExperiences: IJobExperience[];
@@ -47,17 +48,7 @@ export async function getStaticProps() {
 
 const Resume: NextPage<IProps> = (props) => {
   return (
-    <div>
-      <Head>
-        <title>Marco Budiongan</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Marco Budiongan"></meta>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-      </Head>
-
-      {/* Header */}
-
+    <Layout title="Marco Budiongan - CV">
       <CVHeader className="sticky inset-0 z-20" />
 
       <div className="grid grid-cols-1 px-6 md:my-8 md:grid-cols-3 lg:px-24 xl:px-48">
@@ -88,8 +79,7 @@ const Resume: NextPage<IProps> = (props) => {
           }
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
