@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "codegen && next build",
+    "build": "pnpm codegen && next build",
     "start": "next build && next start",
     "lint": "next lint",
     "format": "prettier --write .",
