@@ -58,9 +58,6 @@ export interface IJobExperienceFields {
   /** End Date */
   endDate?: string | undefined;
 
-  /** Tenureship */
-  tenureship: string;
-
   /** Description */
   description: Document;
 
@@ -226,6 +223,14 @@ export type CONTENT_TYPE =
   | 'skill'
   | 'socialLink'
   | 'startPage';
+
+export type IEntry =
+  | IHobby
+  | IJobExperience
+  | IPhoto
+  | ISkill
+  | ISocialLink
+  | IStartPage;
 
 export type LOCALE_CODE = 'en-US';
 

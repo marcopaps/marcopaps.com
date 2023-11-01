@@ -36,11 +36,11 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
       {/* Hobbies section */}
       <CVSection title="Hobbies" hr>
         <div className="flex items-center">
-          <span className="inline-block h-3 w-3 rounded-2xl bg-purple-900"></span>
-          <Link href="https://marcopaps.photos/rides">
-            <a className="ml-2" target="_blank">
+          <span className="inline-block w-3 h-3 bg-purple-900 rounded-2xl"></span>
+          <Link href="https://marcopaps.photos/rides" className="ml-2" target="_blank">
+            
               Motorcycles
-            </a>
+            
           </Link>
         </div>
       </CVSection>

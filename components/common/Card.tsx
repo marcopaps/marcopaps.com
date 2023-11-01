@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import type { Asset } from 'contentful';
 
 interface IProps {
@@ -14,7 +14,7 @@ export default function Thumbnail(props: IProps) {
   const Base = useCallback(
     ({ children }: { children: React.ReactNode }) => {
       if (props.to) {
-        return <NextLink href={props.to}>{children}</NextLink>;
+        return <Link href={props.to}>{children}</Link>;
       }
 
       return <div>{children}</div>;
@@ -53,7 +53,7 @@ export default function Thumbnail(props: IProps) {
 
   return (
     <Base>
-      <div className="relative m-auto h-full max-w-sm rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
+      <div className="relative h-full max-w-sm m-auto bg-white border border-gray-200 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-800">
         {renderImage()}
         <div className="p-5">
           {renderTitle()}

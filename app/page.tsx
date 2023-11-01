@@ -1,26 +1,21 @@
-import { client, entries } from '@/utils/contentful';
-import type { ISocialLink } from '@/types/generated/contentful';
+import { client } from '@/utils/contentful';
 import Layout from '@/components/layout';
-import { Footer } from '@/components/common';
+import Link from 'next/link';
 
-interface IProps {
-  socialLinks: ISocialLink[];
-}
+import type { ISocialLink } from '@/types/generated/contentful';
 
-export async function getStaticProps() {
-  const socialLinks = await client.getEntries({
+
+export async function getEntries() {
+  return client.getEntries({
     content_type: 'socialLink',
     order: '-fields.order',
   });
-
-  return {
-    props: {
-      socialLinks: socialLinks.items,
-    },
-  };
 }
 
-const Home = (props: IProps) => {
+const Home = async () => {
+  const entries = await getEntries();
+  const socialLinks = entries.items as ISocialLink[];
+  
   return (
     <Layout>
       <div className="min-h-screen p-8 sm:px-4 lg:p-8 bg-gradient-to-b from-gray-50 via-white to-gray-400 selection:text-white selection:bg-purple-600">
@@ -51,16 +46,16 @@ const Home = (props: IProps) => {
               +63 961 204 8584
             </a>
           </p>
-          {props.socialLinks.map((socialLink) => (
+          {socialLinks.map((socialLink) => (
             <p key={socialLink.sys.id}>
-              <a
+              <Link
                 href={socialLink.fields.url}
                 className="hover:underline hover:text-purple-800"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 {socialLink.fields.label}
-              </a>
+              </Link>
             </p>
           ))}
         </div>
