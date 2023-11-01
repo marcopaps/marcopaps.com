@@ -16,12 +16,7 @@ const nextConfig = {
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US',
-  },
-  env: {
-    SERVERLESS_ENDPOINT: process.env.SERVERLESS_ENDPOINT,
-    SERVERLESS_SITE_COUNTER_FUNCTION:
-      process.env.SERVERLESS_SITE_COUNTER_FUNCTION,
-  },
+  }
 };
 
 module.exports = nextConfig;
