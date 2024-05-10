@@ -48,7 +48,7 @@ const Home = (props: IProps) => {
               href="tel:+639612048584"
               className="hover:underline hover:text-purple-800"
             >
-              +63 961 204 8584
+              +639 992 674 6377
             </a>
           </p>
           {props.socialLinks.map((socialLink) => (

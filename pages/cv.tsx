@@ -1,7 +1,5 @@
-import Head from 'next/head';
 import { memo } from 'react';
 import { client, entries } from '@/utils/contentful';
-import { Footer } from '@/components/common';
 import {
   CVHeader,
   CVSection,
@@ -58,7 +56,7 @@ const Resume: NextPage<IProps> = (props) => {
           <CVSection title="Profile">
             <div className="items-center block text-gray-800 font-lg text-md md:text-lg">
               {
-                'Results-driven Full Stack JavaScript Developer with a proven track record of successfully delivering projects in diverse corporate and startup environments. Experienced in leveraging agile frameworks to drive efficient and effective development processes.'
+                'Full stack Javascript/Typescript developer with experience in leveraging agile frameworks to drive efficient and effective development processes. Experienced in both corporate and start up environments.'
               }
             </div>
           </CVSection>

@@ -22,7 +22,7 @@ const CVHeader = (props: IProps) => {
           {/* Information section */}
           <div className="md:text-md text-xs text-gray-100 sm:block md:flex ">
             <div>{'Email: hello@marcopaps.com'}</div>
-            <div className="md:ml-4">{'Phone: +639 61 204 8584'}</div>
+            <div className="md:ml-4">{'Phone: +639 992 674 6377'}</div>
           </div>
         </div>
       </div>
