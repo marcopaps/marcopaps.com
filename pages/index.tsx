@@ -1,7 +1,6 @@
 import { client, entries } from '@/utils/contentful';
 import type { ISocialLink } from '@/types/generated/contentful';
 import Layout from '@/components/layout';
-import { Footer } from '@/components/common';
 
 interface IProps {
   socialLinks: ISocialLink[];
@@ -17,6 +16,7 @@ export async function getStaticProps() {
     props: {
       socialLinks: socialLinks.items,
     },
+    revalidate: 1,
   };
 }
 
