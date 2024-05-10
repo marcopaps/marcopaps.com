@@ -15,6 +15,7 @@ import type {
   ISocialLink,
 } from '@/types/generated/contentful';
 import Layout from '@/components/layout';
+import { Footer } from '@/components/common';
 
 interface IProps {
   jobExperiences: IJobExperience[];
@@ -77,6 +78,8 @@ const Resume: NextPage<IProps> = (props) => {
           }
         </div>
       </div>
+
+      <Footer />
     </Layout>
   );
 };
