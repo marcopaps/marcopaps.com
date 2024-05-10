@@ -18,30 +18,18 @@ export const CVPersonalDetails: React.FC<IProps> = (props) => {
   return (
     <div className={props.className}>
       {/* Skills section */}
-      <CVSection title="Skills" hr={isMobile}>
-        <div>
-          {props.skills?.map((item) => {
+      <CVSection title="Technology Stack" hr={isMobile}>
+        <div className="flex flex-wrap gap-2">
+          {props.skills?.map((item, key) => {
             return (
-              <CVSkill
-                key={item.sys.id}
-                label={item.fields.name}
-                rating={item.fields.rating}
-                className="relative py-4"
-              />
+              <div
+                className="bg-white text-purple-900 border border-purple-900 p-2 rounded-3xl w-fit text-center min-w-[4rem] select-none"
+                key={key}
+              >
+                {item.fields.name}
+              </div>
             );
           })}
-        </div>
-      </CVSection>
-
-      {/* Hobbies section */}
-      <CVSection title="Hobbies" hr>
-        <div className="flex items-center">
-          <span className="inline-block w-3 h-3 bg-purple-900 rounded-2xl"></span>
-          <Link href="https://www.marcopaps.life/motorcycles">
-            <a className="ml-2" target="_blank">
-              Motorcycles
-            </a>
-          </Link>
         </div>
       </CVSection>
 
